@@ -32,7 +32,9 @@ public class SecurityConfig {
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) {
         http.authorizeHttpRequests(
                 (requests) -> (requests.
-                        requestMatchers("/h2-console/**").permitAll().anyRequest()).authenticated());
+                        requestMatchers("/h2-console/**","/contact").permitAll()
+                        .requestMatchers("/admin/**","/hello").denyAll()
+                        .anyRequest()).authenticated());
         //http.formLogin(Customizer.withDefaults());
         http.sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS));

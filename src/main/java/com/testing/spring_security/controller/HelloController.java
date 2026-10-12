@@ -22,6 +22,12 @@ public class HelloController {
         return "Hello User";
     }
 
+    @GetMapping("/contact")
+    public String sayContactUser() {
+        return "Hello Contact";
+    }
+
+
     @GetMapping("/admin")
     @PreAuthorize("hasRole('ADMIN')")
     public String sayHelloAdmin() {

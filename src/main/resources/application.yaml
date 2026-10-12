@@ -14,3 +14,7 @@ spring:
     hikari:
       jdbc-url: jdbc:h2:mem:test
 
+
+  app:
+    jwtSecret: w&yR7*vT1^yU6%sL4!9bQz8#Kp2@Xf3H
+    jwtExpirationMs: 172800000
